@@ -14,15 +14,18 @@ const page = () => {
               You have {wishlistStore.wishList.length} items
               in your wishlist
             </span>
-            <div className="flex flex-wrap gap-10 max-md:justify-center">
+            <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 mt-8">
               {wishlistStore.wishList.map((product) => (
-                <div key={product.id}>
+                <div key={product.id} className='product-card'> 
+                <div className="product-image flex justify-center items-center mb-2">
                   <Image
                     src={product.image}
                     alt={product.name}
                     width={200}
                     height={200}
+                    className="object-contain w-[300px] h-[300px]"
                   />
+                </div>
                   <h1 className="font-bold">
                     {product.name}
                   </h1>
